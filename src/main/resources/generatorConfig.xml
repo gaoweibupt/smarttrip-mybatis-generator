@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	
+	<context id="Mysql" defaultModelType="flat" targetRuntime="MyBatis3Simple">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" /><!-- 是否屏蔽注释 。true：屏蔽；false：不屏蔽-->
+			<property name="suppressDate" value="true" /><!-- 在注释中是否显示时间戳 ，这个配置要在suppressAllComments为false的时候才起作用-->
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/smarttrip" userId="smarttrip"
+			password="111111">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="com.smarttrip.domain"
+			targetProject="C:\02coding\workspace\smarttrip-mybatis-generator\src\main\java">
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.smarttrip.xml"
+			targetProject="C:\02coding\workspace\smarttrip-mybatis-generator\src\main\java">
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.smarttrip.dao"
+			targetProject="C:\02coding\workspace\smarttrip-mybatis-generator\src\main\java">
+		</javaClientGenerator>
+
+		<table tableName="user" domainObjectName="User">
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+	</context>
+</generatorConfiguration>
