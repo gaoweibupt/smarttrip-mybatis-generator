@@ -1,5 +1,7 @@
 # smarttrip-mybatis-generator
-根据数据库表自动生成dao.xml、mapper.java和domain对象
+根据数据库表自动生成dao.xml、mapper.java和domain对象。
+
+这时一个独立的工程，我smarttrip项目的其他工程之间不存在依赖关系。
 
 ## 使用方法
 1. 修改数据库连接信息。在`<jdbcConnection>`标签中。
