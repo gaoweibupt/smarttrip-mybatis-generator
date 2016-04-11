@@ -29,7 +29,7 @@
 			targetProject="C:\02coding\workspace\smarttrip-mybatis-generator\src\main\java">
 		</javaClientGenerator>
 
-		<table tableName="user" domainObjectName="User">
+		<table tableName="vistor" domainObjectName="Vistor">
 			<property name="useActualColumnNames" value="true"/>
 		</table>
 	</context>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smarttrip.dao.VistorMapper">
+  <resultMap id="BaseResultMap" type="com.smarttrip.domain.Vistor">
+    <id column="vistorId" jdbcType="CHAR" property="vistorId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="salt" jdbcType="CHAR" property="salt" />
+    <result column="realName" jdbcType="VARCHAR" property="realName" />
+    <result column="realNameSecret" jdbcType="CHAR" property="realNameSecret" />
+    <result column="nickName" jdbcType="VARCHAR" property="nickName" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="emailActivated" jdbcType="CHAR" property="emailActivated" />
+    <result column="mobileNo" jdbcType="CHAR" property="mobileNo" />
+    <result column="registerTime" jdbcType="CHAR" property="registerTime" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="headerLarge" jdbcType="CHAR" property="headerLarge" />
+    <result column="headerSmall" jdbcType="CHAR" property="headerSmall" />
+    <result column="birthday" jdbcType="CHAR" property="birthday" />
+    <result column="birthdaySecret" jdbcType="CHAR" property="birthdaySecret" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="website" jdbcType="VARCHAR" property="website" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from vistor
+    where vistorId = #{vistorId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.smarttrip.domain.Vistor">
+    insert into vistor (vistorId, name, password, 
+      salt, realName, realNameSecret, 
+      nickName, email, emailActivated, 
+      mobileNo, registerTime, status, 
+      headerLarge, headerSmall, birthday, 
+      birthdaySecret, gender, profession, 
+      education, introduction, website
+      )
+    values (#{vistorId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, 
+      #{salt,jdbcType=CHAR}, #{realName,jdbcType=VARCHAR}, #{realNameSecret,jdbcType=CHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{emailActivated,jdbcType=CHAR}, 
+      #{mobileNo,jdbcType=CHAR}, #{registerTime,jdbcType=CHAR}, #{status,jdbcType=CHAR}, 
+      #{headerLarge,jdbcType=CHAR}, #{headerSmall,jdbcType=CHAR}, #{birthday,jdbcType=CHAR}, 
+      #{birthdaySecret,jdbcType=CHAR}, #{gender,jdbcType=CHAR}, #{profession,jdbcType=VARCHAR}, 
+      #{education,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.smarttrip.domain.Vistor">
+    update vistor
+    set name = #{name,jdbcType=VARCHAR},
+      password = #{password,jdbcType=CHAR},
+      salt = #{salt,jdbcType=CHAR},
+      realName = #{realName,jdbcType=VARCHAR},
+      realNameSecret = #{realNameSecret,jdbcType=CHAR},
+      nickName = #{nickName,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      emailActivated = #{emailActivated,jdbcType=CHAR},
+      mobileNo = #{mobileNo,jdbcType=CHAR},
+      registerTime = #{registerTime,jdbcType=CHAR},
+      status = #{status,jdbcType=CHAR},
+      headerLarge = #{headerLarge,jdbcType=CHAR},
+      headerSmall = #{headerSmall,jdbcType=CHAR},
+      birthday = #{birthday,jdbcType=CHAR},
+      birthdaySecret = #{birthdaySecret,jdbcType=CHAR},
+      gender = #{gender,jdbcType=CHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR}
+    where vistorId = #{vistorId,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select vistorId, name, password, salt, realName, realNameSecret, nickName, email, 
+    emailActivated, mobileNo, registerTime, status, headerLarge, headerSmall, birthday, 
+    birthdaySecret, gender, profession, education, introduction, website
+    from vistor
+    where vistorId = #{vistorId,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select vistorId, name, password, salt, realName, realNameSecret, nickName, email, 
+    emailActivated, mobileNo, registerTime, status, headerLarge, headerSmall, birthday, 
+    birthdaySecret, gender, profession, education, introduction, website
+    from vistor
+  </select>
+  <resultMap id="BaseResultMap" type="com.smarttrip.domain.Vistor">
+    <id column="vistorId" jdbcType="CHAR" property="vistorId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="salt" jdbcType="CHAR" property="salt" />
+    <result column="realName" jdbcType="VARCHAR" property="realName" />
+    <result column="realNameSecret" jdbcType="CHAR" property="realNameSecret" />
+    <result column="nickName" jdbcType="VARCHAR" property="nickName" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="emailActivated" jdbcType="CHAR" property="emailActivated" />
+    <result column="mobileNo" jdbcType="CHAR" property="mobileNo" />
+    <result column="registerTime" jdbcType="CHAR" property="registerTime" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="headerLarge" jdbcType="CHAR" property="headerLarge" />
+    <result column="headerSmall" jdbcType="CHAR" property="headerSmall" />
+    <result column="birthday" jdbcType="CHAR" property="birthday" />
+    <result column="birthdaySecret" jdbcType="CHAR" property="birthdaySecret" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="website" jdbcType="VARCHAR" property="website" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from vistor
+    where vistorId = #{vistorId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.smarttrip.domain.Vistor">
+    insert into vistor (vistorId, name, password, 
+      salt, realName, realNameSecret, 
+      nickName, email, emailActivated, 
+      mobileNo, registerTime, status, 
+      headerLarge, headerSmall, birthday, 
+      birthdaySecret, gender, profession, 
+      education, introduction, website
+      )
+    values (#{vistorId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, 
+      #{salt,jdbcType=CHAR}, #{realName,jdbcType=VARCHAR}, #{realNameSecret,jdbcType=CHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{emailActivated,jdbcType=CHAR}, 
+      #{mobileNo,jdbcType=CHAR}, #{registerTime,jdbcType=CHAR}, #{status,jdbcType=CHAR}, 
+      #{headerLarge,jdbcType=CHAR}, #{headerSmall,jdbcType=CHAR}, #{birthday,jdbcType=CHAR}, 
+      #{birthdaySecret,jdbcType=CHAR}, #{gender,jdbcType=CHAR}, #{profession,jdbcType=VARCHAR}, 
+      #{education,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.smarttrip.domain.Vistor">
+    update vistor
+    set name = #{name,jdbcType=VARCHAR},
+      password = #{password,jdbcType=CHAR},
+      salt = #{salt,jdbcType=CHAR},
+      realName = #{realName,jdbcType=VARCHAR},
+      realNameSecret = #{realNameSecret,jdbcType=CHAR},
+      nickName = #{nickName,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      emailActivated = #{emailActivated,jdbcType=CHAR},
+      mobileNo = #{mobileNo,jdbcType=CHAR},
+      registerTime = #{registerTime,jdbcType=CHAR},
+      status = #{status,jdbcType=CHAR},
+      headerLarge = #{headerLarge,jdbcType=CHAR},
+      headerSmall = #{headerSmall,jdbcType=CHAR},
+      birthday = #{birthday,jdbcType=CHAR},
+      birthdaySecret = #{birthdaySecret,jdbcType=CHAR},
+      gender = #{gender,jdbcType=CHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR}
+    where vistorId = #{vistorId,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select vistorId, name, password, salt, realName, realNameSecret, nickName, email, 
+    emailActivated, mobileNo, registerTime, status, headerLarge, headerSmall, birthday, 
+    birthdaySecret, gender, profession, education, introduction, website
+    from vistor
+    where vistorId = #{vistorId,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select vistorId, name, password, salt, realName, realNameSecret, nickName, email, 
+    emailActivated, mobileNo, registerTime, status, headerLarge, headerSmall, birthday, 
+    birthdaySecret, gender, profession, education, introduction, website
+    from vistor
+  </select>
+</mapper>
